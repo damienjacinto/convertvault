@@ -4,12 +4,12 @@ Composant de chiffrement/déchiffrement de vault mis à disposition des projets 
 
 ## Fonctionnement
 
-Saisir la clé dans le champ obligatoire de saisie de mot de passe.
-Saisir le contenu à chiffre/dechiffrer dans la zone de saisie de gauche.
-Utiliser le bouton pour faire la conversion.
-Le résultat sera affiché dans la zone de saisie en lecture seule sur la droite.
-Les messages d'erreurs sont affichés sous la zone de saisie de la clé de chiffrement.
-Un bouton permet de copier dans le presse papier le résultat de la conversion.
+- Saisir la clé dans le champ obligatoire de saisie de mot de passe.
+- Saisir le contenu à chiffre/dechiffrer dans la zone de saisie de gauche.
+- Utiliser le bouton pour faire la conversion.
+- Le résultat sera affiché dans la zone de saisie en lecture seule sur la droite.
+- Les messages d'erreurs sont affichés sous la zone de saisie de la clé de chiffrement.
+- Un bouton permet de copier dans le presse papier le résultat de la conversion.
 
 ## Installation
 
