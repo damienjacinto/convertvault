@@ -1,10 +1,11 @@
 import logging
+import sys
 from ansible.constants import DEFAULT_VAULT_ID_MATCH
 from ansible.parsing.vault import VaultSecret, VaultLib
 
 class Convert:
    def __init__(self, password):
-      self.text = ''
+      self.text = b''
       self.err = ''
       self.password = password
       if password:
@@ -15,7 +16,7 @@ class Convert:
          if self.vault and source:
             self.decrypt(source) if source.startswith("$ANSIBLE_VAULT") else self.encrypt(source)
       finally:
-         return {'password': self.password, 'source': source, 'result': self.text, 'error': self.err}
+         return {'password': self.password, 'source': source, 'result': self.text.decode('utf-8'), 'error': self.err}
 
    def encrypt(self, source):
       logging.debug("Request encrypt")

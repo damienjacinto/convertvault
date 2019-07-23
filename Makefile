@@ -1,9 +1,10 @@
+SHELL:=/bin/bash
 APP?=convertvault
 CONTAINER_IMAGE?=jacintod/convertvault
 RELEASE?=1.0.0
 PORT?=8080
 
-.PHONY: help run container env
+.PHONY: help run container
 
 help:
 	@ echo
@@ -19,11 +20,15 @@ help:
 	@ echo '    drun        Run docker image on binded port: $(PORT) - check $$(PORT)'
 	@ echo ''
 	
-env: 
-	source env/bin/activate
+venv: venv/bin/active
 
+venv/bin/active: requirements.txt
+	test -d venv || virtualenv venv && \
+    pip3 install -r requirements.txt && \
+	. venv/bin/activate
+	
 run: 
-	PORT=$(PORT) DEBUG=0 python3 main.py
+	PORT=$(PORT) DEBUG=0 python3 convertvault.py
 
 container:
 	docker stop $(CONTAINER_IMAGE):$(RELEASE) || true && \

@@ -15,4 +15,4 @@ RUN set -euxo pipefail ;\
     rm -rf /root/.cache ;\
     ln -s /usr/bin/python3 /usr/bin/python ;
 
-CMD ["gunicorn", "-w", "3", "main:app", "-b", "0.0.0.0:8080"]
+CMD ["gunicorn", "-w", "3", "convertvault:app", "-b", "0.0.0.0:8080"]
