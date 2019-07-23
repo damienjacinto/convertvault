@@ -4,7 +4,7 @@ CONTAINER_IMAGE?=jacintod/convertvault
 RELEASE?=1.0.0
 PORT?=8080
 
-.PHONY: help run container
+.PHONY: help run container test
 
 help:
 	@ echo
@@ -18,6 +18,7 @@ help:
 	@ echo '    run         Run app on port: $(PORT) - check $$(PORT)'
 	@ echo '    container   Build the docker image'
 	@ echo '    drun        Run docker image on binded port: $(PORT) - check $$(PORT)'
+	@ echo '    test        lancement des tests'
 	@ echo ''
 	
 venv: venv/bin/active
@@ -37,3 +38,6 @@ container:
 drun: container
 	docker run --name ${APP} -p ${PORT}:8080 --rm \
 		$(CONTAINER_IMAGE):$(RELEASE)
+
+test:
+	python3 test.py -v
