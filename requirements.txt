@@ -2,7 +2,7 @@ ansible==2.8.2
 asn1crypto==0.24.0
 beautifulsoup4==4.8.0
 boddle==0.2.8
-bottle==0.12.17
+bottle==0.12.20
 cffi==1.12.3
 cryptography==2.7
 gunicorn==19.9.0
